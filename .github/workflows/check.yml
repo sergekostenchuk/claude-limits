@@ -1,0 +1,22 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  macos:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test npm commands
+        run: npm test
+      - name: Test Swift core
+        run: swift test --disable-sandbox --scratch-path /tmp/native-app-tests
+      - name: Build app without launching
+        run: ./build-app.sh
+      - name: Check npm contents
+        run: npm pack --dry-run --ignore-scripts

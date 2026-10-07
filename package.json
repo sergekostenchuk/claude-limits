@@ -1,0 +1,51 @@
+{
+  "name": "claude-limits-macos",
+  "version": "1.0.2",
+  "description": "Native macOS menu bar app for remaining Claude usage limits.",
+  "type": "module",
+  "bin": {
+    "claude-limits-macos": "bin/cli.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "os": [
+    "darwin"
+  ],
+  "files": [
+    "bin/",
+    "lib/",
+    "Sources/",
+    "Tests/",
+    "Resources/",
+    "npm-tests/",
+    "Package.swift",
+    "build-app.sh",
+    "README.md",
+    "docs/",
+    "Login.command"
+  ],
+  "scripts": {
+    "test": "node --test npm-tests/*.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergekostenchuk/claude-limits.git"
+  },
+  "homepage": "https://github.com/sergekostenchuk/claude-limits#readme",
+  "bugs": {
+    "url": "https://github.com/sergekostenchuk/claude-limits/issues"
+  },
+  "keywords": [
+    "macos",
+    "swift",
+    "menu-bar",
+    "claude",
+    "ai"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "nativeApp": "Claude Limits.app"
+}
