@@ -1,6 +1,6 @@
 {
   "name": "claude-limits-macos",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Native macOS menu bar app for remaining Claude usage limits.",
   "type": "module",
   "bin": {

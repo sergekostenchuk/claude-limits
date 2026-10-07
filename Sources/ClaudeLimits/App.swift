@@ -39,7 +39,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         RunLoop.main.add(tick, forMode: .common); timer = tick
         wakeObserver = NSWorkspace.shared.notificationCenter.addObserver(
             forName: NSWorkspace.didWakeNotification, object: nil, queue: .main
-        ) { [weak self] _ in Task { @MainActor in self?.tick() } }
+        ) { [weak self] _ in
+            guard let delegate = self else { return }
+            Task { @MainActor in delegate.tick() }
+        }
     }
 
     private func configureMenu() {
